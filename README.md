@@ -5,6 +5,7 @@
 
 # Patterns Used
 - ## Cache-Aside Pattern for the caching layer
+<img width="1056" height="635" alt="image" src="https://github.com/user-attachments/assets/215dcb3d-c943-4d1d-98f6-f23622911cf9" />
 
 
 
