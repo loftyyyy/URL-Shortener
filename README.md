@@ -12,7 +12,8 @@
 * **Total Requests Handled:** **410,451 completed requests** with a **0.00% error rate**
 * **p95 Latency:** **3.49ms** (95% of all redirect requests completed in under 3.5 milliseconds)
 * **Median Latency:** **1.21ms**
-
+> *The Redis memory caching layer successfully shielded PostgreSQL from heavy database locks, allowing consistent sub-5ms response times under spike traffic.*
+ 
 <img width="931" height="827" alt="image" src="https://github.com/user-attachments/assets/ebf67289-4c59-478f-8881-09c67e509e50" />
 
 
