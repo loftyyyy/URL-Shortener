@@ -4,6 +4,7 @@ import com.rho.urlshortener.encoder.Base62Encoder;
 import com.rho.urlshortener.model.UrlEntity;
 import com.rho.urlshortener.repository.UrlShortenerRepository;
 import jakarta.transaction.Transactional;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -33,6 +34,13 @@ public class UrlShortenerService {
 
 
         return shortKey;
+    }
+
+    @Cacheable(value = "urls", key = "#shortKey")
+    public String getLongUrl(String shortKey){
+
+        UrlEntity urlEntity = urlShortenerRepository.findByShortKey(shortKey).orElseThrow(() -> new RuntimeException("URL not found for key: " + shortKey));
+        return urlEntity.getLongUrl();
     }
 
 }
