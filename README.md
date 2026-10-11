@@ -2,6 +2,18 @@
 - Spring Boot (4.1.1)
 - PostgreSQL
 - Redis
+- Cache Abstraction
+
+# Performance and Load Testing (K6 Grafana)
+- To validate the scalability and low-latency design of the Cache-Aside pattern, the service was stress-tested locally using **k6** under an escalating load profile (up to 200 concurrent virtual users).
+
+## Benchmark Results (Summary)
+* **Total Throughput:** **8,207.72 Requests / Second (RPS)**
+* **Total Requests Handled:** **410,451 completed requests** with a **0.00% error rate**
+* **p95 Latency:** **3.49ms** (95% of all redirect requests completed in under 3.5 milliseconds)
+* **Median Latency:** **1.21ms**
+
+
 
 # Patterns Used
 - ## Cache-Aside Pattern for the caching layer

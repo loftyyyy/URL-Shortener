@@ -1,13 +1,13 @@
 package com.rho.urlshortener.service;
 
+import com.rho.urlshortener.dto.UrlRequestDTO;
+import com.rho.urlshortener.dto.UrlResponseDTO;
 import com.rho.urlshortener.encoder.Base62Encoder;
 import com.rho.urlshortener.model.UrlEntity;
 import com.rho.urlshortener.repository.UrlShortenerRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
-
-import java.time.LocalDateTime;
 
 @Service
 public class UrlShortenerService {
@@ -21,10 +21,10 @@ public class UrlShortenerService {
     }
 
     @Transactional
-    public String shortenUrl(String longUrl){
+    public UrlResponseDTO shortenUrl(UrlRequestDTO urlRequestDTO){
         UrlEntity urlEntity = UrlEntity.builder()
                 .shortKey("TEMP")
-                .longUrl(longUrl)
+                .longUrl(urlRequestDTO.url())
                 .build();
 
         urlEntity = urlShortenerRepository.save(urlEntity);
@@ -33,7 +33,7 @@ public class UrlShortenerService {
         urlShortenerRepository.save(urlEntity);
 
 
-        return shortKey;
+        return new UrlResponseDTO(shortKey);
     }
 
     @Cacheable(value = "urls", key = "#shortKey")
