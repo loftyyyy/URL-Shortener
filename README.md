@@ -4,6 +4,10 @@
 - Redis
 - Cache Abstraction
 
+# API endpoints
+- POST (http://localhost:8080/shorten)
+- GET (http://localhost:8080/{shortenUrl})
+
 # Performance and Load Testing (K6 Grafana)
 - To validate the scalability and low-latency design of the Cache-Aside pattern, the service was stress-tested locally using **k6** under an escalating load profile (up to 200 concurrent virtual users).
 
@@ -30,3 +34,8 @@
 # Main System Design for the Caching Layer
 
 <img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/c5c210af-4de9-418d-b9d3-8b05cdc77ad9" />
+
+
+# Future Works
+
+## Create It's own Frontend UI and maybe deploy it
