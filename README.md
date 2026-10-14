@@ -31,6 +31,8 @@
 
 
 
+
+
 # Main System Design for the Caching Layer
 
 <img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/c5c210af-4de9-418d-b9d3-8b05cdc77ad9" />
