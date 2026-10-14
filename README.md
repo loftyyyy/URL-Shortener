@@ -41,3 +41,4 @@
 # Future Works
 
 ## Create it's own Frontend UI and maybe deploy it
+## Implement a whole user base with RBAC for admin and users
